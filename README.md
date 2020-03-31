@@ -1,7 +1,5 @@
 # README
 
-＃＃ユーザーテーブル
-
 ## users table
 | column    |	type    | options      |
 | user_id   | integer |
@@ -41,8 +39,3 @@ class users_group < ActiveRecord::Base
   belongs_to :user
   belongs_to :group
 end
-
-
-
-ER図
-マークダウン
