@@ -1,0 +1,15 @@
+.sidebar
+  .sidebar__header
+    .sidebar__header__box
+      %p.sidebar__header__name
+        長岡
+      %ul.sidebar__header__icon
+        = link_to " # ", class: "contents__btn--icon" do
+          = icon('fab', 'twitch',  class: "contents__btn--icon")
+        = link_to " # ", class: "contents__btn--icon" do
+          = icon('fab', 'amazon-pay', class: "contents__btn--icon")
+  .sidebar__menu
+    .sidebar__menu__group
+      %p.sidebar__menu__group__name test_グループ長岡
+      %p.sidebar__menu__group__message まだメッセージはありません
+    -# ＜サイドメニュー＞
