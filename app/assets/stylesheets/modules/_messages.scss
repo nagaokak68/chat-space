@@ -110,32 +110,41 @@
     padding: 20px 40px;
     width: calc(100vw - 300px);
     background-color: #d2d2d2;
-      &__form{
+    .new_message{
         display: flex;
-        &__input{
+    }
+        .mainchat__footer__input{
           position: relative;
           width: 100%;
-          background-color: grey;
-          &__box{
+          // background-color: grey;
+          &-text{
             height: 50px;
             width: 100%;
             padding: 0 40px 0 10px;
             color: #434a54;
             border-style: none;
-            background-color: white;
-            &__icon{
+          }
+            &-image{
+              // height: 50px;
+              // width: 100%;
+              // color: #434a54;
+              // border-style: none;
+              // padding: 0 0 0 10px;
+            &-icon{
               font-size: 1.3rem;
               position: absolute;
-              top: 10px;
+              top: 15px;
               right: 10px;
               cursor: pointer;
-              &__file{
-                display: none;
-              }
             }
-          }
+            .mainchat__footer__input-image-file{
+              display: none;
+            }
+          
         }
-        &__btm{
+      
+    }
+        .mainchat__footer__btm{
           width: 100px;
           height: 50px;
           padding: 0 30px;
@@ -145,6 +154,29 @@
           color: white;
           cursor: pointer;
         }
-      }
     }
   }
+
+    // .mainchat__footer
+    // = form_for [@group, @message] do |f|
+    //   = f.text_field :content, class: 'mainchat__footer__form__input', placeholder: 'type a message'
+    //   .form__mask
+    //     = f.label :image, class: 'mainchat__footer__form__input__box' do
+    //       %input{type: "text", class: "mainchat__footer__form__input__box__text", placeholder: "type a message"}
+    //       %label{class: "mainchat__footer__form__input__box__icon"}
+    //         = icon('fas', 'image', class: 'icon')
+    //         = f.file_field :image, class: 'hidden'
+    //         %input{type: "file", class: "mainchat__footer__form__input__box__icon__file"}
+    //   = f.submit 'Send', class: 'mainchat__footer__form__btm'
+
+
+    // %form.mainchat__footer__form
+    // .mainchat__footer__form__input
+    //   .mainchat__footer__form__input__box
+    //     %input{type: "text", class: "mainchat__footer__form__input__box__text", placeholder: "type a message"}
+    //     %label{class: "mainchat__footer__form__input__box__icon"}
+    //       = icon('fas', 'image')
+    //       %input{type: "file", class: "mainchat__footer__form__input__box__icon__file"}
+    // .mainchat__footer__form__btm
+    //   %input{type: "submit", class: "submit-btm", name: "commit", value: "Send", }
+    //   Send
