@@ -1,10 +1,11 @@
-.message
-  .upper-message
-    .upper-message__user-name
-      = message.user.name
-    .upper-message__date
-      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .lower-message
+.message__contents
+  .mainchat__contents__message
+    .mainchat__contents__message__info
+      .mainchat__contents__message__info__name
+        = message.user.name
+      .mainchat__contents__message__info__data
+        = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .mainchat__contents__message__text
     - if message.content.present?
       %p.lower-message__content
         = message.content
