@@ -1,10 +1,10 @@
 .mainchat
   .mainchat__header
     .mainchat__header__leftbox
-      %h2.mainchat__header__leftbox__group
+      .mainchat__header__leftbox__group
         = @group.name
       %ul.mainchat__header__leftbox__member
-        member: 
+        Member： 
         %li.mainchat__header__leftbox__member__list
           - @users.each do |user|
             = user.name
@@ -12,28 +12,16 @@
       = link_to edit_group_path(@group), class: "contents__btn--icon" do
         ="Edit"
 
+          
   .mainchat__contents
-    .mainchat__contents__message
-      .mainchat__contents__message__info
-        %p.mainchat__contents__message__info__name
-          長岡
-        %p.mainchat__contents__message__info__data
-          2020/04/11
-      .mainchat__contents__message__text
-        = render @messages
-        a_test
+    = render @messages
+        
 
   .mainchat__footer
     = form_for [@group, @message] do |f|
       .mainchat__footer__input
         = f.text_field :content, class: 'mainchat__footer__input-text', placeholder: 'type a message'
         = f.label :image, class: 'mainchat__footer__input-image' do
-          -# %input{type: "text", class: "mainchat__footer__form__input__box__text", placeholder: "type a message"}
-          -# %label{class: "mainchat__footer__form__input__box__icon"}
           = icon('fas', 'image', class: 'mainchat__footer__input-image-icon')
           = f.file_field :image, class: 'mainchat__footer__input-image-file'
       = f.submit 'Send', class: 'mainchat__footer__btm'
-      -# .mainchat__footer__form__btm
-      -#   %input{type: "submit", class: "submit-btm", name: "commit", value: "Send", }
-      -#   Send
-
