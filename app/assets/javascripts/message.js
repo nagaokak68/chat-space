@@ -61,10 +61,11 @@ $('#new_message').on('submit', function(e){
     $('.mainchat__contents').append(html);
     $('form')[0].reset();
     $('.mainchat__contents').animate({ scrollTop: $('.mainchat__contents')[0].scrollHeight}, "fast");
-    $(".mainchat__footer__btm").prop("disabled", false);
   })
   .fail(function() {
     alert ('メッセージ送信に失敗しました');
+  })
+  .always(function() {
     $(".mainchat__footer__btm").prop("disabled", false);
   });
 })
