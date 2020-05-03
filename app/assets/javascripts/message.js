@@ -3,13 +3,15 @@ $(function(){
   function buildHTML(message){
    if ( message.image ) {
      var html =
-      `<div class="message">
-         <div class="upper-message">
-           <div class="upper-message__user-name">
-             ${message.user_name}
-           </div>
-           <div class="upper-message__date">
-             ${message.created_at}
+      `<div class="message__contents">
+         <div class="mainchat__contents__message">
+           <div class="mainchat__contents__message__info">
+              <div class="mainchat__contents__message__info__name">
+              ${message.user_name}
+              </div>
+              <div class="mainchat__contents__message__info__data">
+              ${message.created_at}
+              </div>
            </div>
          </div>
          <div class="lower-message">
@@ -22,16 +24,18 @@ $(function(){
      return html;
    } else {
      var html =
-      `<div class="message">
-         <div class="upper-message">
-           <div class="upper-message__user-name">
-             ${message.user_name}
-           </div>
-           <div class="upper-message__date">
-             ${message.created_at}
-           </div>
+      `<div class="message__contents">
+         <div class="mainchat__contents__message">
+           <div class="mainchat__contents__message__info">
+            <div class="mainchat__contents__message__info__name">
+            ${message.user_name}
+            </div>
+            <div class="mainchat__contents__message__info__data">
+            ${message.created_at}
+            </div>
+          </div>
          </div>
-         <div class="lower-message">
+         <div class="mainchat__contents__message__text">
            <p class="lower-message__content">
              ${message.content}
            </p>
@@ -54,9 +58,9 @@ $('#new_message').on('submit', function(e){
  })
   .done(function(data){
     var html = buildHTML(data);
-    $('.mainchat__contents__message__text').append(html);
+    $('.mainchat__contents').append(html);
     $('form')[0].reset();
-    $('.mainchat__contents').animate({ scrollTop: $('.mainchat__contents__message__text')[0].scrollHeight}, "fast");
+    $('.mainchat__contents').animate({ scrollTop: $('.mainchat__contents')[0].scrollHeight}, "fast");
     $(".mainchat__footer__btm").prop("disabled", false);
   })
   .fail(function() {
