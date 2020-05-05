@@ -1,4 +1,4 @@
-.message__contents
+.message__contents{data: {message: {id: message.id}}}
   .mainchat__contents__message
     .mainchat__contents__message__info
       .mainchat__contents__message__info__name
@@ -10,3 +10,4 @@
       %p.lower-message__content
         = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
