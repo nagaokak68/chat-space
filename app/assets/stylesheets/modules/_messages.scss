@@ -83,7 +83,9 @@ a{
         position: absolute;
         height: 40px;
         right: 40px;
-        color: #38aef0;
+        .contents__btn--icon{
+          color: #38aef0;
+        }
       }
     }
 
